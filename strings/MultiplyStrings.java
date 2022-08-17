@@ -24,7 +24,7 @@ public class MultiplyStrings {
 
     public static void test(String num1, String num2) {
 	System.out.println();
-	System.out.printf("Input: num1: %s, %s", num1, num2);
+	System.out.printf("Input: num1: %s, num2: %s", num1, num2);
 	System.out.println();
 
 	var output = multiply(num1, num2);
@@ -44,10 +44,12 @@ public class MultiplyStrings {
 	int[] num1Array = new int[num1.length()];
 	int[] num2Array = new int[num2.length()];
 
+	// num1 = "1234" ==> num1Array = {4, 3, 2, 1}
 	for (int pos = num1.length() - 1; pos >= 0; pos--) {
 	    num1Array[num1.length() - 1 -pos] = num1.charAt(pos) - '0';
 	}
 
+	// num2 = "5600" ==> num2Array = {0, 0, 6, 5}
 	for (int pos = num2.length() - 1; pos >= 0; pos--) {
 	    num2Array[num2.length() - 1 -pos] = num2.charAt(pos) - '0';
 	}
