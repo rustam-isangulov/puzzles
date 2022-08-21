@@ -47,7 +47,7 @@ public class DiameterOfBinaryTree {
 
     public static int diameterOfBinaryTree(TreeNode root) {
 	if (null != root) {
-	    // find the the longest path that goes through this node
+	    // find the longest path that goes through this node
 	    int rootD =
 		((null != root.left) ? maxDepth(root.left) + 1 : 0)
 		+ ((null != root.right) ? maxDepth(root.right) + 1 : 0);
@@ -64,7 +64,7 @@ public class DiameterOfBinaryTree {
     }
 
 
-    // counting max number of endges
+    // counting max number of edges
     // between this node and farthest
     // descendant
     public static int maxDepth(TreeNode root) {
