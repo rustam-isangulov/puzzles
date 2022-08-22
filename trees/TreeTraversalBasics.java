@@ -180,22 +180,35 @@ public class TreeTraversalBasics {
 
 	// set the root node
 	parents.add(root);
+	// print level by level
+	printTreeLevels(parents);
+    }
 
-	while (parents.stream().anyMatch(e -> e != null)) {
-	    // print all nodes including "null"
-	    parents.forEach( node -> {
-		    System.out.print
-			(((null != node) ? node.val : "null") + " ");
-		});
 
-	    // line breaker
-	    System.out.println();
+    static void printTreeLevels(List<TreeNode> level) {
+        boolean hasNonNulls = false;
+	List<TreeNode> descendants = new ArrayList<>();
 
-	    // collect all descendants of non-null nodes
-	    parents = parents.stream()
-		.filter(e -> e != null)
-		.flatMap(e -> Stream.of(e.left, e.right))
-		.collect(Collectors.toList());
+	for (var node : level) {
+	    System.out.print
+		(((null != node) ? node.val : "null") + " ");
+
+	    if (null != node) {
+		descendants.add(node.left);
+		descendants.add(node.right);
+
+		if (!hasNonNulls && (null != node.left || null != node.right)) {
+		    hasNonNulls = true;
+		}
+	    }
+	}
+
+	// line breaker
+	System.out.println();
+
+	if (hasNonNulls) {
+	    // print the next level down
+	    printTreeLevels(descendants);
 	}
     }
 }
