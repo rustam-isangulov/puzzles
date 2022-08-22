@@ -96,7 +96,7 @@ public class TreeTraversalBasics {
 	if (null == root) return;
 
 	traverseLeftEdgePost(root.left);
-	System.out.print(root.val + " -> ");
+	System.out.print(((null != root.left) ? " -> " : "") + root.val);
     }
 
 
@@ -112,6 +112,7 @@ public class TreeTraversalBasics {
 	if (null == root) return;
 
 	traverseLeftEdgePost(root);
+	System.out.print((null != root.right) ? " -> " : "");
 	traverseRightEdge(root.right);
     }
 
@@ -172,7 +173,7 @@ public class TreeTraversalBasics {
     }
 
 
-    static void printTree(TreeNode root) {
+    public static void printTree(TreeNode root) {
 	// main idea is to collect parents node and print them
 	// then use that collection of parents to collect all descendants
 	// make descendants "the new" parents ... and repeat.. simpls.
