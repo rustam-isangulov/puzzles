@@ -26,9 +26,11 @@ public class WaveArrayTest {
                 Arguments.of(
                         new int[]{},
                         new int[]{}
+                ),
+                Arguments.of(
+                        new int[]{-1, -1, -1},
+                        new int[]{-1, -1, -1}
                 )
         );
     }
-
-
 }
