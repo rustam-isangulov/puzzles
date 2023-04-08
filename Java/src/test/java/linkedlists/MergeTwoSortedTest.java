@@ -24,26 +24,9 @@ public class MergeTwoSortedTest {
     static Stream<Arguments> test() {
         return Stream.of(
                 Arguments.of(
-                        new ListNode(1, new ListNode(2, new ListNode(4))),
-                        new ListNode(1, new ListNode(3, new ListNode(4))),
-                        new ListNode(
-                                1,
-                                new ListNode(
-                                        1,
-                                        new ListNode(
-                                                2,
-                                                new ListNode(
-                                                        3,
-                                                        new ListNode(
-                                                                4,
-                                                                new ListNode(
-                                                                        4
-                                                                )
-                                                        )
-                                                )
-                                        )
-                                )
-                        )
+                        ListNode.deserializeList(1, 2, 4),
+                        ListNode.deserializeList(1, 3, 4),
+                        ListNode.deserializeList(1, 1, 2, 3, 4, 4)
                 ),
 				Arguments.of(
 						null,
@@ -52,13 +35,13 @@ public class MergeTwoSortedTest {
 				),
 				Arguments.of(
 						null,
-						new ListNode(1, new ListNode(3, new ListNode(4))),
-						new ListNode(1, new ListNode(3, new ListNode(4)))
+						ListNode.deserializeList(1, 3, 4),
+						ListNode.deserializeList(1, 3, 4)
 				),
 				Arguments.of(
-						new ListNode(1, new ListNode(3, new ListNode(4))),
+						ListNode.deserializeList(1, 3, 4),
 						null,
-						new ListNode(1, new ListNode(3, new ListNode(4)))
+						ListNode.deserializeList(1, 3, 4)
 				)
 		);
     }
