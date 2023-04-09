@@ -1,5 +1,0 @@
-* Next
-** TODO wrap-up 'rigit' display method, test and commit to GitHub
-** TODO implement 'dangling hooks in a queue' method of reading list of nodes
-** TODO implement variable vlaue length printing logic for compact display
-** TODO wrap-up, test, commit to GitHub (article?)
