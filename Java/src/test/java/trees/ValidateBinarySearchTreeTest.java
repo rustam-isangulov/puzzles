@@ -27,11 +27,7 @@ public class ValidateBinarySearchTreeTest {
     @ParameterizedTest
     @MethodSource
     void test( TreeNode root, boolean expectedOutput ) {
-        System.out.println("Input root val: " + root.val);
         boolean result = solution.isValidBST(root);
-        System.out.println(">>>> Result: " + result);
-        System.out.println();
-
         Assertions.assertEquals(expectedOutput, result);
     }
 
