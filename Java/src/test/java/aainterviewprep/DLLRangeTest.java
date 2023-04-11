@@ -37,11 +37,22 @@ public class DLLRangeTest {
     @MethodSource
     void test( Node head, Predicate<Node> rule, String expectedOutput ) {
         Node filtered = DLLRange.filter(head, rule);
-        Assertions.assertEquals(expectedOutput, filtered.toString());
+        Assertions.assertEquals(expectedOutput, filtered != null ? filtered.toString() : "null");
     }
 
     public static Stream<Arguments> test() {
         return Stream.of(
+                Arguments.of(
+                        testHead,
+                        named("values outside of range (6, 9)",
+                                lambdaToPredicate(
+                                        node -> node.getValue() > 6
+                                                && node.getValue() < 9
+
+                                )
+                        ),
+                        "null"
+                ),
                 Arguments.of(
                         testHead,
                         named("values in range (2,5)",
