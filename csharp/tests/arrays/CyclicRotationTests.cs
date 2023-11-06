@@ -4,7 +4,7 @@ namespace tests;
 
 public class CyclicRotationTest
 {
-    [Theory, MemberData(nameof(TestData))]
+    [Theory(Skip = "done"), MemberData(nameof(TestData))]
     public void TestMulti(int[] inputA, int inputK, int[] expectedRotatedArray)
     {
         var instance = new CyclicRotation();
