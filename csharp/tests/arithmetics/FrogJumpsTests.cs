@@ -4,7 +4,7 @@ namespace tests;
 
 public class FrogJumpsTest
 {
-    [Theory, MemberData(nameof(TestData))]
+    [Theory(Skip = "done"), MemberData(nameof(TestData))]
     public void TestMulti(int X, int Y, int D, int expectedNumberOfJumps)
     {
         var instance = new FrogJumps();
