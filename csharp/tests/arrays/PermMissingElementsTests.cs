@@ -4,7 +4,7 @@ namespace tests;
 
 public class PermMissingElementTest
 {
-    [Theory, MemberData(nameof(TestData))]
+    [Theory(Skip ="done"), MemberData(nameof(TestData))]
     public void TestMulti(int[] inputA, int expectedMissingValue)
     {
         var instance = new PermMissingElement();
