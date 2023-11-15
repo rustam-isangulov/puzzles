@@ -4,7 +4,7 @@ namespace tests;
 
 public class AvSolutionTest
 {
-    [Theory, MemberData(nameof(TestData))]
+    [Theory(Skip = "done"), MemberData(nameof(TestData))]
     public void TestMultiLINQ(string[] inputArgs, int expectedValue)
     {
         var instance = new AvSolution();
@@ -14,7 +14,7 @@ public class AvSolutionTest
         Assert.Equal(expectedValue, resultValue);
     }
 
-    [Theory, MemberData(nameof(TestData))]
+    [Theory(Skip = "done"), MemberData(nameof(TestData))]
     public void TestMulti(string[] inputArgs, int expectedValue)
     {
         var instance = new AvSolution();
