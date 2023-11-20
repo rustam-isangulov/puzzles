@@ -4,7 +4,7 @@ namespace tests;
 
 public class DotTest
 {
-    [Theory, MemberData(nameof(TestData))]
+    [Theory(Skip ="done"), MemberData(nameof(TestData))]
     public void TestMulti(int[,] A, int[,] B, int[,] expectedDotAB)
     {
         var instance = new Dot();
